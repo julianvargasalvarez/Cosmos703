@@ -11,6 +11,7 @@ function body(mass, x, y, type, src) {
     img.setAttribute('src', src);
     img.setAttribute('style', 'position: absolute;');
 
+
     return {
         Mass: mass,
         x: x,
