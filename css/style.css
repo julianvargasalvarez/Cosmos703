@@ -132,6 +132,7 @@ html, body, #bg, #bg table, #bg td
         #bg
         {
             position: fixed;
+            z-index: 1;
         }
         #bg div
         {
@@ -153,3 +154,14 @@ html, body, #bg, #bg table, #bg td
             min-width: 50%;
         }
         
+#imgEarth
+{
+    z-index: 99999;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	top: auto;
+	bottom: auto;
+	
+    opacity: 1;
+}
