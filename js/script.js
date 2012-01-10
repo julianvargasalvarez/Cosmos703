@@ -373,28 +373,15 @@ myShip.Update = function (container) {
 myShip.Shot = function () {
     var x = this.x;
     var y = this.y;
+    var r = 100;
+    var angle = this.Angle;
+
     var bullet = new body(1, x, y, BodyType.Bullet, "./img/Bullet.gif");
 
-    if (x < engine.CenterX())
-        bullet.DirectionX = -1;
+    var F = bullet.Mass * Math.pow(this.AngularSpeed, 2) * r;
 
-    else if (x > engine.CenterX())
-        bullet.DirectionX = +1;
-
-    else
-        bullet.DirectionX = 0;
-
-    if (y < engine.CenterY())
-        bullet.DirectionY = -1;
-
-    else if (y > engine.CenterY())
-        bullet.DirectionY = +1;
-
-    else
-        bullet.DirectionY = 0;
-
-    bullet.ForceFactors.push(200);
-
+    bullet.ForceFactors.push(F);
+    
     bullet.Update = function (container) {
         var factor = this.ForceFactors[0];
         if (factor <= 0) {
@@ -402,15 +389,10 @@ myShip.Shot = function () {
             this.Dom = null;
             return;
         }
-
-        var hop = 1;
-
-        var directionX = this.DirectionX;
-        var directionY = this.DirectionY;
-
+        r += 1;
         this.ForceFactors[0] -= 1;
-        this.x += directionX;
-        this.y += directionY;
+        this.x = engine.CenterX() + r * Math.cos(angle); ;
+        this.y = engine.CenterY() + r * Math.sin(angle); ;
     }
 
     engine.AddObject(bullet);
