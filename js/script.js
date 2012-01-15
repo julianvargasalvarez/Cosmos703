@@ -389,7 +389,7 @@ myShip.Shot = function () {
             this.Dom = null;
             return;
         }
-        r += 1;
+        r += 4;
         this.ForceFactors[0] -= 1;
         this.x = engine.CenterX() + r * Math.cos(angle); ;
         this.y = engine.CenterY() + r * Math.sin(angle); ;
@@ -409,7 +409,7 @@ myShip.OnKeyDown = function (evt) {
 engine.AddObject(myShip);
 
 engine.Start([
-    { Name: "Warming up!", Initial: 1, Max: 3, Step: 1, Counter: 0 },
+    { Name: "Warming up!", Initial: 5, Max: 30, Step: 1, Counter: 0 },
     { Name: "Suck it bitch!", Initial: 1, Max: 3, Step: 1, Counter: 0 },
     { Name: "Holly shit!!!", Initial: 1, Max: 3, Step: 1, Counter: 0 }
 ]);
