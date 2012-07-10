@@ -409,7 +409,7 @@ myShip.OnKeyDown = function (evt) {
 engine.AddObject(myShip);
 
 engine.Start([
-    { Name: "Warming up!", Initial: 5, Max: 30, Step: 1, Counter: 0 },
+    { Name: "Warming up!", Initial: 110, Max: 120, Step: 1, Counter: 0 },
     { Name: "Suck it bitch!", Initial: 1, Max: 3, Step: 1, Counter: 0 },
     { Name: "Holly shit!!!", Initial: 1, Max: 3, Step: 1, Counter: 0 }
 ]);
